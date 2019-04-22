@@ -1,273 +1,166 @@
     body {
-        font-family: 'EB Garamond', serif, sans-serif;
-        line-height: normal;
-        font-size: 18px
+    	font-family: 'EB Garamond', serif, sans-serif;
+    	line-height: normal;
+    	font-size: 18px
     }
 
     img {
-        max-width: 100%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    	max-width: 100%;
+    	display: block;
+    	margin-left: auto;
+    	margin-right: auto;
     }
 
     input,
     select,
     textarea,
     button {
-        font-family: inherit;
-        font-size: 100%;
-        box-sizing: border-box;
-        width: 45%;
+    	font-family: inherit;
+    	font-size: 100%;
+    	box-sizing: border-box;
+    	width: 45%;
     }
 
     [type="radio"] {
-        width: 10%;
+    	width: 10%;
     }
 
     legend {
-        overflow: hidden;
+    	overflow: hidden;
     }
 
     input:focus,
     textarea:focus {
-        background-color: lightblue;
+    	background-color: lightblue;
     }
 
     /*  grids */
 
     main {
-        display: grid;
+    	display: grid;
     }
 
     /* hero content */
 
     .content {
-        display: grid;
+    	display: grid;
     }
 
     /* about content */
 
     .about-content {
-        display: grid;
+    	display: grid;
     }
 
     /*  gallery */
 
     .gallery {
-        display: grid;
+    	display: grid;
+    }
+
+    figure {
+    	display: grid;
     }
 
     /*  article */
 
     article {
-        display: grid;
-        padding-left: 5px;
-        padding-right: 5px;
-
+    	display: grid;
     }
 
     /* form container */
     .form-container {
-        display: grid;
+    	display: grid;
     }
 
     /* footer */
 
     footer {
-        display: grid;
-        text-align: center;
+    	display: grid;
     }
 
     /*  layout */
 
     /*   mobile is the default layout*/
-    /*  hero content */
-    .hero .content picture {
-        width: 100%;
-        margin: 0 auto;
-
-    }
-
-    .hero .content p {
-        margin: 5px 0;
-    }
-
-    .hero.content picture {
-        margin-bottom: 50px;
-        display: block;
-    }
-
-    /*	about content */
-    .about-content {
-        width: 80%;
-        margin-bottom: 50px;
-    }
-
-    about-content p {
-        margin: 5px 0;
-    }
-
-    .about-content .my-info {
-        padding-left: 50px;
-    }
-
-    /*	gallery */
-    .gallery .content figure {
-        width: 90%;
-        border: 0;
-        margin: 0 auto 20px;
-    }
-
-    .gallery .content figure figcaption {
-        font-size: 15px;
-        padding-top: 20px;
-        text-align: center;
-    }
-
-    /*	article */
-    article {
-        font-size: 18px;
-        text-align: left;
-    }
-
-    article p {
-        line-height: 1.6;
-        margin: 10px 0;
-    }
-
-    /*	form */
-    .story,
-    .form-container {
-        width: 90%;
-        padding: 0;
-        margin: 0 auto;
-    }
-
-    .story h1,
-    .form-container h2 {
-        font-size: 32px;
-        text-align: center;
-    }
 
     /* tablet layout >=48rem (768px) */
 
     @media screen and (min-width: 48rem) {
 
-        /* hero content */
+    	.mobile-first {
+    		display: none;
+    	}
 
-        .hero .content {
-            width: 75%;
-            margin: 20px auto 0;
-        }
+    	/* hero content */
 
-        .hero .content p,
-        .about-content {
-            padding: 30px;
-            width: 30rem;
-            margin: 20px auto 0;
-            line-height: 0.5;
-        }
+    	.content {
+    		grid-template-columns: 1fr 1fr 1fr;
+    	}
 
-        .gallery .content figure {
-            width: 100%;
-            margin: 0;
-            display: flex;
-        }
+    	.content picture,
+    	.content p,
+    	.about-content {
+    		grid-column: 2/3;
+    	}
 
-        .gallery .content figure figcaption {
-            width: 100%;
-            text-align: left;
-            padding-top: 125px;
-            padding-left: 100px;
-            box-sizing: border-box;
-        }
+    	/*	about content */
 
+    	/*	gallery */
 
-        /*	article */
-        article {
-            display: grid;
-        }
-}
+    	figure {
+    		grid-template-columns: 1fr 1fr;
+    		align-items: center;
+    		justify-items: center;
+    	}
+			
+			figcaption {
+				margin-left: 2rem;
+			}
 
-        /* wide screen layout >=64rem (1024px) */
+    	/*	article */
 
-        @media screen and (min-width: 64rem) {
+    	article,
+    	.form-container {
+    		grid-template-columns: 1fr 48rem 1fr;
+    	}
 
-            /* hero content */
-
-            .hero .content {
-                display: grid;
-                width: 60%;
-                margin: 20px auto 0;
-            }
-
-            .hero .content p {
-                display: block;
-                width: 60%;
-                margin: 20px auto 0;
-                padding-left: 10rem;
-            }
+    	article h1,
+    	.story-body,
+    	.form-container h1,
+    	form {
+    		grid-column: 2/3;
+    	}
 
 
-            /* about content */
 
-            .about-content {
-                display :block;
-                width: 60%;
-                margin: 20px auto 0;
-            }
-
-            .about-content p {
-                margin: 20px auto 0;
-                text-align: left;
-                padding-left: 20rem
-            }
-
-            .about-content .my-info {
-                padding-left: 25rem;
-            }
-
-            /*    gallery */
-            .gallery .content {
-                display: flex;
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-
-            .gallery .content figure {
-                width: 43%;
-                margin: 0;
-                display: flex;
-                border: 1px solid #ccd;
-            }
-
-            .gallery .content figure picture {
-                width: 40%;
-            }
-
-            .gallery .content figure figcaption {
-                width: 50%;
-                text-align: center;
-                padding-top: 115px;
-            }
+    	/*	form */
 
 
-            /*    article */
+    }
 
-            article {
-                display: grid;
-            }
+    /* wide screen layout >=64rem (1024px) */
 
-            /*    form */
-            .story {
-                width: 60%;
-                margin: 0 auto;
-                padding: 0 200px;
-            }
+    @media screen and (min-width: 64rem) {
 
-            .story h1,
-            .form-container h2 {
-                text-align: center;
-            }
-        }
+    	/*  hero content */
+
+    	/*	about content */
+
+    	/*	gallery */
+
+    	.gallery {
+    		grid-template-columns: 1fr 1fr 1fr;
+    		align-items: center;
+    		justify-items: center;
+
+    	}
+
+    	.gallery h1 {
+    		grid-column: 1/4;
+    	}
+
+    	/*	article */
+
+    	/*	form */
+
+    }
